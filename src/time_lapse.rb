@@ -16,6 +16,8 @@ class TimeLapse
     return :disabled unless config['enabled']
     return :paused unless during_time?
     return :already_performed if File.exist?(file_path)
+    puts "writting #{file_path}"
+    File.open(dot_file_path, 'w') { |f| f.write '' }
     `fswebcam #{opts} #{file_path}`
     :done
   end
@@ -51,6 +53,10 @@ class TimeLapse
     @file_path ||= File.join store_path, file_name
   end
 
+  def dot_file_path
+    @file_path ||= File.join store_path, '.trtl'
+  end
+
   def file_name
     @file_name ||= (format_date(perform_at) + '.jpg')
   end
@@ -62,8 +68,8 @@ class TimeLapse
   def format_date(date)
     date.to_s
         .split('+')
-        .first
-        .gsub(/(_- )+/, '')
+        .first[0..-2]
+        .gsub(/[^0-9]/, '_')
   end
 
   def config_date_or_default(key, default)
