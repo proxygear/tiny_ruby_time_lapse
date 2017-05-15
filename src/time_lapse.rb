@@ -17,7 +17,7 @@ class TimeLapse
     return :paused unless during_time?
     return :already_performed if File.exist?(file_path)
     puts "writting #{file_path}"
-    File.open(dot_file_path, 'w') { |f| f.write '' }
+    File.open(dot_file_path, 'w') { |f| f.write 'allowed' }
     `fswebcam #{opts} #{file_path}`
     :done
   end
