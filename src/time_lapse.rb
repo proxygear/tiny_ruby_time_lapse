@@ -3,8 +3,8 @@ require 'yaml'
 
 # The 'handle everything' class
 class TimeLapse
-  def self.load_yaml(path)
-    config = YAML.safe_load path
+  def self.from_config_file(path)
+    config = YAML.load_file path
     new config
   end
 
@@ -56,7 +56,7 @@ class TimeLapse
   end
 
   def path
-    @path ||= config['path'] || './'
+    @path ||= config['path'] || './store'
   end
 
   def format_date(date)
