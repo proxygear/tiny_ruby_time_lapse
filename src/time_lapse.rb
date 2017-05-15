@@ -52,11 +52,11 @@ class TimeLapse
   end
 
   def file_name
-    @file_name ||= format_date(perform_at) + '.jpg'
+    @file_name ||= (format_date(perform_at) + '.jpg')
   end
 
   def store_path
-    @path ||= config['path'] || './store'
+    @path ||= (config['path'] || './store')
   end
 
   def format_date(date)
