@@ -3,7 +3,7 @@ require 'yaml'
 
 # The 'handle everything' class
 class TimeLapse
-  def self.load_yml(path)
+  def self.load_yaml(path)
     config = YAML.safe_load path
     new config
   end
