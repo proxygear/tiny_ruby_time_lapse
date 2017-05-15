@@ -54,7 +54,7 @@ class TimeLapse
   end
 
   def dot_file_path
-    @file_path ||= File.join store_path, '.trtl'
+    @dot_file_path ||= File.join store_path, '.trtl'
   end
 
   def file_name
