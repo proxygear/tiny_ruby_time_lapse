@@ -50,6 +50,7 @@ Gemfile.lock
 .rvmrc
 
 ##Local specific
+*.log
 config.yml
 ./store/*.jpg
 ./store/*.jpeg
