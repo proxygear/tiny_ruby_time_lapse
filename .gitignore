@@ -51,3 +51,5 @@ Gemfile.lock
 
 ##Local specific
 config.yml
+./store/*.jpg
+./store/*.jpeg
