@@ -36,8 +36,8 @@ class TimeLapse
 
   def minutes
     return @minutes if @minutes
-    @minutes = config['minutes'].to_i
-    @minutes = 1 if @minutes < 1
+    @minutes = config['minutes'].to_f
+    @minutes = 1.0 if @minutes <= 0.0
     @minutes
   end
 
