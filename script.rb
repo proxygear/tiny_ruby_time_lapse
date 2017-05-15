@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require './src/time_lapse'
+require './src/time_lapse.rb'
 
 begin
   res = TimeLapse.from_config_file('./config.yml').call
