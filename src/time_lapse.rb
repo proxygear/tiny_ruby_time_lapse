@@ -48,14 +48,14 @@ class TimeLapse
   end
 
   def file_path
-    @file_path ||= File.join file_path, file_name
+    @file_path ||= File.join store_path, file_name
   end
 
   def file_name
     @file_name ||= format_date(perform_at) + '.jpg'
   end
 
-  def path
+  def store_path
     @path ||= config['path'] || './store'
   end
 

@@ -1,6 +1,6 @@
 enabled: true # set to false or remove to stop the process
-start_at: 7:30 #optional
-end_at: 9:00:01 #optional
+start_at: "7:30" #optional
+end_at: "9:00:01" #optional
 minutes: 30
 path: 'my_folder' #optional, default to ./store
 resolution: 1280x720 #required
